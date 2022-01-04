@@ -13,4 +13,19 @@ public class ResSvc : MonoBehaviour
         Instance = this;
         this.Log("Init ResSvc done");
     }
+
+    private Dictionary<string,AudioClip> adDic = new Dictionary<string, AudioClip>();
+    public AudioClip LoadAudio(string path,bool cache = false)
+    {
+        AudioClip au = null;
+        if(!adDic.TryGetValue(path,out au))
+        {
+            au = Resources.Load<AudioClip>(path);
+            if(cache)
+            {
+                adDic.Add(path,au);
+            }
+        }
+        return au;
+    }
 }

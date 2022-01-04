@@ -5,12 +5,13 @@ using UnityEngine;
 /**
 登录系统
 */
-public class LoginSys : MonoBehaviour
+public class LoginSys : SysRoot
 {
     public static LoginSys Instance;
     public LoginWnd loginWnd;
-    public void InitSys()
+    public override void InitSys()
     {
+        base.InitSys();
         Instance = this;
         this.Log("Init LoginSys done");
     }
@@ -18,5 +19,6 @@ public class LoginSys : MonoBehaviour
     public void EnterLogin()
     {
         loginWnd.SetWndState();
+        audioSvc.PlayBGMusic(NameDefine.MainCityBGMusic);
     }
 }

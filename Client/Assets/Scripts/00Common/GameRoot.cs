@@ -5,10 +5,13 @@ using PEUtils;
 
 public class GameRoot : MonoBehaviour
 {
+    public static GameRoot Instance;
+
     [SerializeField]
     private Transform uiRoot;
     void Start()
     {
+        Instance = this;
         LogConfig cfg = new LogConfig
         {
             enableLog = true,
@@ -74,5 +77,8 @@ public class GameRoot : MonoBehaviour
         battleSys = GetComponent<BattleSys>();
         battleSys.InitSys();
 
+
+        loginSys.EnterLogin();
+        this.Log("EnterLogin");
     }
 }

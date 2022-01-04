@@ -8,9 +8,15 @@ using UnityEngine;
 public class LoginSys : MonoBehaviour
 {
     public static LoginSys Instance;
+    public LoginWnd loginWnd;
     public void InitSys()
     {
         Instance = this;
         this.Log("Init LoginSys done");
+    }
+
+    public void EnterLogin()
+    {
+        loginWnd.SetWndState();
     }
 }

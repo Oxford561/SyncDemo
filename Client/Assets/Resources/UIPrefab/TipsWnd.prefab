@@ -10,13 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 7761268541476543835}
   - component: {fileID: 1119488481}
+  - component: {fileID: 737752908402895337}
   m_Layer: 5
   m_Name: TipsWnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7761268541476543835
 RectTransform:
   m_ObjectHideFlags: 0
@@ -56,6 +57,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &737752908402895337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109729688406687294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1f1b44229dbc446ac7df284e04883a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgTips: {fileID: 6445091410169151473}
+  txtTips: {fileID: 3644159415441910519}
+  ani: {fileID: 1119488481}
 --- !u!1 &2518289373001012036
 GameObject:
   m_ObjectHideFlags: 0

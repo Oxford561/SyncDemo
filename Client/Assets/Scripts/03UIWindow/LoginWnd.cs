@@ -25,7 +25,7 @@ public class LoginWnd : WindowRoot
         else
         {
             // "账号/密码不符合规范"
-
+            root.AddTips("账号或密码为空！");
         }
     }
 

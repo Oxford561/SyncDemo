@@ -7,8 +7,9 @@ public class GameRoot : MonoBehaviour
 {
     public static GameRoot Instance;
 
-    [SerializeField]
-    private Transform uiRoot;
+    public Transform uiRoot;
+    public TipsWnd tipsWnd;
+
     void Start()
     {
         Instance = this;
@@ -43,6 +44,7 @@ public class GameRoot : MonoBehaviour
             Transform trans = uiRoot.GetChild(i);
             trans.gameObject.SetActive(false);
         }
+        tipsWnd.SetWndState();
     }
 
     void Update()
@@ -80,5 +82,10 @@ public class GameRoot : MonoBehaviour
 
         loginSys.EnterLogin();
         this.Log("EnterLogin");
+    }
+
+    public void AddTips(string tips)
+    {
+        tipsWnd.AddTips(tips);
     }
 }

@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // UI 窗口基类
 public class WindowRoot : MonoBehaviour
@@ -40,5 +42,35 @@ public class WindowRoot : MonoBehaviour
         netSvc = null;
         resSvc = null;
         audioSvc = null;
+    }
+
+    protected void SetActive(GameObject go,bool state = true)
+    {
+        go.SetActive(state);
+    }
+
+    protected void SetActive(Transform trans,bool state = true)
+    {
+        trans.gameObject.SetActive(state);
+    }
+
+    protected void SetActive(RectTransform rectTransform,bool state = true)
+    {
+        rectTransform.gameObject.SetActive(state);
+    }
+
+    protected void SetActive(Image img,bool state = true)
+    {
+        img.gameObject.SetActive(state);
+    }
+
+    protected void SetActive(Text txt,bool state = true)
+    {
+        txt.gameObject.SetActive(state);
+    }
+
+    protected void SetActive(InputField ipt,bool state = true)
+    {
+        ipt.gameObject.SetActive(state);
     }
 }

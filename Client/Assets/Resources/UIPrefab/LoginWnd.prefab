@@ -1274,7 +1274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2564118839347219617
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1311,6 +1311,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9dc9eb6f49952469ba724e178abff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iptAcct: {fileID: 4405548195116784992}
+  iptPass: {fileID: 5770033121134189093}
+  togSrv: {fileID: 6440459194687572452}
 --- !u!1 &6642865647118852612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1736,8 +1739,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 5734440763263117159}
+        m_TargetAssemblyTypeName: LoginWnd, Assembly-CSharp
         m_MethodName: ClickLoginBtn
         m_Mode: 1
         m_Arguments:

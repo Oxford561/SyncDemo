@@ -31,4 +31,15 @@ public class AudioSvc : MonoBehaviour
             bgAudio.Play();
         }
     }
+
+    public void PlayUIAudio(string name)
+    {
+        if(!TurnOnVoice)
+        {
+            return;
+        }
+        AudioClip audio = ResSvc.Instance.LoadAudio("ResAudio/"+name,true);
+        uiAudio.clip = audio;
+        uiAudio.Play();
+    }
 }

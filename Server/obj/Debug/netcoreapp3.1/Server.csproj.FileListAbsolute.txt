@@ -1,0 +1,15 @@
+D:\GitProjects\SyncDemo\Server\bin\Debug\netcoreapp3.1\Server.exe
+D:\GitProjects\SyncDemo\Server\bin\Debug\netcoreapp3.1\Server.deps.json
+D:\GitProjects\SyncDemo\Server\bin\Debug\netcoreapp3.1\Server.runtimeconfig.json
+D:\GitProjects\SyncDemo\Server\bin\Debug\netcoreapp3.1\Server.runtimeconfig.dev.json
+D:\GitProjects\SyncDemo\Server\bin\Debug\netcoreapp3.1\Server.dll
+D:\GitProjects\SyncDemo\Server\bin\Debug\netcoreapp3.1\Server.pdb
+D:\GitProjects\SyncDemo\Server\bin\Debug\netcoreapp3.1\PEUtils.dll
+D:\GitProjects\SyncDemo\Server\obj\Debug\netcoreapp3.1\Server.csprojAssemblyReference.cache
+D:\GitProjects\SyncDemo\Server\obj\Debug\netcoreapp3.1\Server.AssemblyInfoInputs.cache
+D:\GitProjects\SyncDemo\Server\obj\Debug\netcoreapp3.1\Server.AssemblyInfo.cs
+D:\GitProjects\SyncDemo\Server\obj\Debug\netcoreapp3.1\Server.csproj.CoreCompileInputs.cache
+D:\GitProjects\SyncDemo\Server\obj\Debug\netcoreapp3.1\Server.csproj.CopyComplete
+D:\GitProjects\SyncDemo\Server\obj\Debug\netcoreapp3.1\Server.dll
+D:\GitProjects\SyncDemo\Server\obj\Debug\netcoreapp3.1\Server.pdb
+D:\GitProjects\SyncDemo\Server\obj\Debug\netcoreapp3.1\Server.genruntimeconfig.cache

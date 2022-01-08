@@ -4,6 +4,21 @@
     "E:\\GitProjects\\SyncDemo\\Server\\Server.csproj": {}
   },
   "projects": {
+    "E:\\GitProjects\\SyncDemo\\Protocol\\Protocol.csproj": {
+      "restore": {
+        "projectUniqueName": "E:\\GitProjects\\SyncDemo\\Protocol\\Protocol.csproj",
+        "projectName": "Protocol",
+        "projectPath": "E:\\GitProjects\\SyncDemo\\Protocol\\Protocol.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
     "E:\\GitProjects\\SyncDemo\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -31,7 +46,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "E:\\GitProjects\\SyncDemo\\Protocol\\Protocol.csproj": {
+                "projectPath": "E:\\GitProjects\\SyncDemo\\Protocol\\Protocol.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

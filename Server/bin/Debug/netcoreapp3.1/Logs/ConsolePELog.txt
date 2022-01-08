@@ -1,7 +1,7 @@
-[L]# 09:22:40--393  ThreadID:1 >> CacheSvc Init Done
-[L]# 09:22:40--430  ThreadID:1 >> TimerSvc Init Done
-[L]# 09:22:40--431  ThreadID:1 >> NetSvc Init Done
-[L]# 09:22:40--432  ThreadID:1 >> LoginSys Init Done
-[L]# 09:22:40--432  ThreadID:1 >> MatchSys Init Done
-[L]# 09:22:40--432  ThreadID:1 >> RoomSys Init Done
-[L]# 09:22:40--432  ThreadID:1 >> ServerRoot Init Done
+[L]# 02:09:23--587  ThreadID:1 >> CacheSvc Init Done
+[L]# 02:09:23--638  ThreadID:1 >> TimerSvc Init Done
+[L]# 02:09:23--638  ThreadID:1 >> NetSvc Init Done
+[L]# 02:09:23--638  ThreadID:1 >> LoginSys Init Done
+[L]# 02:09:23--639  ThreadID:1 >> MatchSys Init Done
+[L]# 02:09:23--639  ThreadID:1 >> RoomSys Init Done
+[L]# 02:09:23--639  ThreadID:1 >> ServerRoot Init Done

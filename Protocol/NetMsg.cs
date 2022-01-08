@@ -7,6 +7,7 @@ namespace Protocol
     /// <summary>
     /// 网络通讯协议
     /// </summary>
+    [Serializable]
     public class NetMsg:KCPMsg
     {
         public CMD cmd;
@@ -31,7 +32,7 @@ namespace Protocol
     [Serializable]
     public class UserData
     {
-        public int id;
+        public uint id;
         public string name;
         public int lv;
         public int exp;
@@ -47,6 +48,7 @@ namespace Protocol
     }
 
     // 错误码
+    [Serializable]
     public enum ErrorCode
     {
         None,
@@ -54,6 +56,7 @@ namespace Protocol
     }
 
     // 通信协议命令号
+    [Serializable]
     public enum CMD
     {
         None = 0,

@@ -1310,6 +1310,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LobbyWnd
       objectReference: {fileID: 0}
+    - target: {fileID: 8243375322827510551, guid: a6ec242bb0287b9459a441ad78d6bdf9, type: 3}
+      propertyPath: m_Text
+      value: 00:00
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6ec242bb0287b9459a441ad78d6bdf9, type: 3}
 --- !u!114 &8311686609652959894 stripped

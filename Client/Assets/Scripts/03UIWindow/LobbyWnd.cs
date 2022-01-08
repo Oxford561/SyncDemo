@@ -45,7 +45,7 @@ public class LobbyWnd : WindowRoot
             int min = predictTime / 60;
             int sec = predictTime % 60;
             string minStr = min < 10 ? "0" + min + ":" : min.ToString() + ":";
-            string secStr = sec < 10 ? "0" + sec + ":" : sec.ToString() + ":";
+            string secStr = sec < 10 ? "0" + sec : sec.ToString();
             txtPredictTime.text = "Ô¤¼ÆÆ¥ÅäÊ±¼ä£º"+minStr + secStr;
         }
         else
@@ -78,9 +78,9 @@ public class LobbyWnd : WindowRoot
     private void SetCountTime()
     {
         int min = timeCount / 60;
-        int sec = timeCount * 60;
+        int sec = timeCount % 60;
         string minStr = min < 10 ? "0" + min +":":min.ToString()+":";
-        string secStr = sec < 10 ? "0" + sec + ":" : sec.ToString() + ":";
+        string secStr = sec < 10 ? "0" + sec : sec.ToString(); 
         txtCountTime.text = minStr + secStr;
     }
 

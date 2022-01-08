@@ -53,7 +53,7 @@ public class NetSvc : MonoBehaviour
         {
             if(checkTask.Result)
             {
-                GameRoot.Instance.ShowTips("连接服务器成功");
+                //GameRoot.Instance.ShowTips("连接服务器成功");
                 this.ColorLog(LogColor.Green,"Connect Server Success");
                 checkTask = null;
                 // todo 发送 ping
@@ -125,6 +125,9 @@ public class NetSvc : MonoBehaviour
         {
             case CMD.RspLogin:
                 LoginSys.Instance.RspLogin(msg);
+                break;
+            case CMD.RspMatch:
+                LobbySys.Instance.RspMatch(msg);
                 break;
             default:
                 break;

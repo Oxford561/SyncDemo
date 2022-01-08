@@ -1,3 +1,4 @@
+using Protocol;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,5 +17,11 @@ public class LobbySys : SysRoot
     public void EnterLobby()
     {
         lobbyWnd.SetWndState();
+    }
+
+    public void RspMatch(NetMsg msg)
+    {
+        int predictTime = msg.rspMatch.predictTime;
+        lobbyWnd.ShowMatchInfo(true,predictTime);
     }
 }

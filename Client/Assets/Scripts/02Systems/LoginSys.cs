@@ -35,6 +35,6 @@ public class LoginSys : SysRoot
     public void EnterLobby()
     {
         startWnd.SetWndState(false);
-
+        LobbySys.Instance.EnterLobby();
     }
 }

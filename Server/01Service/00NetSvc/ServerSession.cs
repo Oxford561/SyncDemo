@@ -21,6 +21,7 @@ namespace Server
 
         protected override void OnReciveMsg(NetMsg msg)
         {
+            NetSvc.Instance.AddMsgQue(this,msg);
         }
 
         protected override void OnUpdate(DateTime now)

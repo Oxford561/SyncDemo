@@ -1,0 +1,7 @@
+E:\GitProjects\SyncDemo\Client\Assets\Scripts\00Common\Libs\KCPNet\Protocol.dll
+E:\GitProjects\SyncDemo\Client\Assets\Scripts\00Common\Libs\KCPNet\Protocol.pdb
+E:\GitProjects\SyncDemo\Protocol\obj\Debug\Protocol.csproj.AssemblyReference.cache
+E:\GitProjects\SyncDemo\Protocol\obj\Debug\Protocol.csproj.CoreCompileInputs.cache
+E:\GitProjects\SyncDemo\Protocol\obj\Debug\Protocol.csproj.CopyComplete
+E:\GitProjects\SyncDemo\Protocol\obj\Debug\Protocol.dll
+E:\GitProjects\SyncDemo\Protocol\obj\Debug\Protocol.pdb

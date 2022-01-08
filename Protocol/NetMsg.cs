@@ -14,7 +14,11 @@ namespace Protocol
         public ErrorCode error;
         public ReqLogin reqLogin;
         public RspLogin rspLogin;
+        public ReqMatch reqMatch;
+        public RspMatch rspMatch;
     }
+
+    #region 登录相关
 
     [Serializable]
     public class ReqLogin
@@ -47,6 +51,34 @@ namespace Protocol
         public int heroID;
     }
 
+
+    #endregion
+
+    #region 匹配相关
+
+    [Serializable]
+    public enum PVPEnum
+    {
+        None=0,
+        _1v1 = 1,
+        _2v2 = 2,
+        _5v5 = 3,
+    }
+
+    [Serializable]
+    public class ReqMatch
+    {
+        public PVPEnum pvPEnum;
+    }
+
+    [Serializable]
+    public class RspMatch
+    {
+        public int predictTime;
+    }
+
+    #endregion
+
     // 错误码
     [Serializable]
     public enum ErrorCode
@@ -63,5 +95,9 @@ namespace Protocol
         // 登录
         ReqLogin= 1,
         RspLogin= 2,
+
+        // 匹配
+        ReqMatch = 3,
+        RspMatch = 4,
     }
 }

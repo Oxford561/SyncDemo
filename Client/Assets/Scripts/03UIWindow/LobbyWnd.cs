@@ -87,6 +87,33 @@ public class LobbyWnd : WindowRoot
     public void ClickMatchBtn()
     {
         audioSvc.PlayUIAudio("matchBtnClick");
+        NetMsg msg = new NetMsg
+        {
+            cmd = CMD.ReqMatch,
+            reqMatch = new ReqMatch { pvPEnum = PVPEnum._1v1 }
+        };
+        netSvc.SendMsg(msg);
+    }
 
+    public void ClickRankBtn()
+    {
+        audioSvc.PlayUIAudio("matchBtnClick");
+        NetMsg msg = new NetMsg
+        {
+            cmd = CMD.ReqMatch,
+            reqMatch = new ReqMatch { pvPEnum = PVPEnum._2v2 }
+        };
+        netSvc.SendMsg(msg);
+    }
+
+    public void ClickSettingBtn()
+    {
+        audioSvc.PlayUIAudio("matchBtnClick");
+        NetMsg msg = new NetMsg
+        {
+            cmd = CMD.ReqMatch,
+            reqMatch = new ReqMatch { pvPEnum = PVPEnum._5v5 }
+        };
+        netSvc.SendMsg(msg);
     }
 }

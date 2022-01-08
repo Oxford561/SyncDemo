@@ -36,6 +36,54 @@ public class LobbyWnd : WindowRoot
         txtTicket.text = ud.ticket.ToString();
     }
 
+    public void ShowMatchInfo(bool isActive,int predictTime=0)
+    {
+        if(isActive)
+        {
+            SetActive(transMatchRoot);
+            isMatching = true;
+            int min = predictTime / 60;
+            int sec = predictTime % 60;
+            string minStr = min < 10 ? "0" + min + ":" : min.ToString() + ":";
+            string secStr = sec < 10 ? "0" + sec + ":" : sec.ToString() + ":";
+            txtPredictTime.text = "Ô¤¼ÆÆ¥ÅäÊ±¼ä£º"+minStr + secStr;
+        }
+        else
+        {
+            SetActive(transMatchRoot,false);
+            isMatching = false;
+            deltaSum = 0;
+            timeCount = 0;
+        }
+    }
+
+    private int timeCount = 0;
+    private float deltaSum = 0;
+    private bool isMatching = false;
+    private void Update()
+    {
+        if(isMatching)
+        {
+            float delta = Time.deltaTime;
+            deltaSum += delta;
+            if(deltaSum>= 1)
+            {
+                deltaSum -= 1;
+                timeCount += 1;
+            }
+            SetCountTime();
+        }
+    }
+
+    private void SetCountTime()
+    {
+        int min = timeCount / 60;
+        int sec = timeCount * 60;
+        string minStr = min < 10 ? "0" + min +":":min.ToString()+":";
+        string secStr = sec < 10 ? "0" + sec + ":" : sec.ToString() + ":";
+        txtCountTime.text = minStr + secStr;
+    }
+
     public void ClickMatchBtn()
     {
         audioSvc.PlayUIAudio("matchBtnClick");

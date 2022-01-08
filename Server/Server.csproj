@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Protocol\Protocol.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Kcp">
       <HintPath>Plugins\Kcp.dll</HintPath>
     </Reference>

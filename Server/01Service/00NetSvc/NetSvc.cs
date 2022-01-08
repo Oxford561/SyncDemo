@@ -31,6 +31,8 @@ namespace Server
         {
             base.Init();
 
+            msgPackQue.Clear ();
+
             // 给 KCP 网络库设置日志配置
             KCPTool.LogFunc = this.Log;
             KCPTool.WarnFunc = this.Warn;

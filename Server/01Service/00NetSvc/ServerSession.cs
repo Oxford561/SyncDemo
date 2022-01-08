@@ -13,14 +13,17 @@ namespace Server
     {
         protected override void OnConnected()
         {
+            this.ColorLog(PEUtils.LogColor.Green,"Client Online sid="+m_sid);
         }
 
         protected override void OnDisConnected()
         {
+            this.Warn("Client OffLine sid=" + m_sid);
         }
 
         protected override void OnReciveMsg(NetMsg msg)
         {
+            this.Log("RcvPack CMD:{0}", msg.cmd.ToString());
             NetSvc.Instance.AddMsgQue(this,msg);
         }
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PEUtils;
+using Protocol;
 
 public class GameRoot : MonoBehaviour
 {
@@ -88,4 +89,14 @@ public class GameRoot : MonoBehaviour
     {
         tipsWnd.AddTips(tips);
     }
+
+    #region
+    UserData userData;
+    public UserData UserData
+    {
+        set { userData = value; }
+        get { return userData; }
+    }
+
+    #endregion
 }

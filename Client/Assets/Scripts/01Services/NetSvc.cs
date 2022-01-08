@@ -106,8 +106,28 @@ public class NetSvc : MonoBehaviour
     }
 
     // 消息分发
-    private void HandoutMsg(NetMsg pack)
+    private void HandoutMsg(NetMsg msg)
     {
+        if(msg.error != ErrorCode.None)
+        {
+            switch(msg.error)
+            {
+                case ErrorCode.AcctIsOnline:
+                    GameRoot.Instance.ShowTips("当前账号已经上线了");
+                    break;
+                default:
+                    break;
+            }
+            return;
+        }
 
+        switch (msg.cmd)
+        {
+            case CMD.RspLogin:
+                LoginSys.Instance.RspLogin(msg);
+                break;
+            default:
+                break;
+        }
     }
 }

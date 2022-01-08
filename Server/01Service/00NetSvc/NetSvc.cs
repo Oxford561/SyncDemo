@@ -79,6 +79,9 @@ namespace Server
                 case CMD.ReqLogin:
                     LoginSys.Instance.ReqLogin(pack);
                     break;
+                case CMD.ReqMatch:
+                    MatchSys.Instance.ReqMatch(pack);
+                    break;
                 case CMD.None:
                     break;
             }

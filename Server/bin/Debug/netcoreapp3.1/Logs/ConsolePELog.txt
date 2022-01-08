@@ -1,10 +1,10 @@
-[L]# 03:48:03--492  ThreadID:1 >> CacheSvc Init Done
-[L]# 03:48:03--515  ThreadID:1 >> TimerSvc Init Done
-[L]# 03:48:03--794  ThreadID:1 >> Server Start...
-[L]# 03:48:03--814  ThreadID:1 >> NetSvc Init Done
-[L]# 03:48:03--819  ThreadID:1 >> LoginSys Init Done
-[L]# 03:48:03--819  ThreadID:1 >> MatchSys Init Done
-[L]# 03:48:03--819  ThreadID:1 >> RoomSys Init Done
-[L]# 03:48:03--819  ThreadID:1 >> ServerRoot Init Done
-[L]# 03:48:11--104  ThreadID:6 >> Client Online sid=1
-[L]# 03:48:11--270  ThreadID:5 >> RcvPack CMD:ReqLogin
+[L]# 05:11:46--007  ThreadID:1 >> CacheSvc Init Done
+[L]# 05:11:46--032  ThreadID:1 >> TimerSvc Init Done
+[L]# 05:11:46--103  ThreadID:1 >> Server Start...
+[L]# 05:11:46--122  ThreadID:1 >> NetSvc Init Done
+[L]# 05:11:46--126  ThreadID:1 >> LoginSys Init Done
+[L]# 05:11:46--126  ThreadID:1 >> MatchSys Init Done
+[L]# 05:11:46--127  ThreadID:1 >> RoomSys Init Done
+[L]# 05:11:46--127  ThreadID:1 >> ServerRoot Init Done
+[L]# 05:11:50--783  ThreadID:6 >> Client Online sid=1
+[L]# 05:11:50--825  ThreadID:4 >> RcvPack CMD:ReqLogin

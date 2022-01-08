@@ -84,7 +84,7 @@ public class GameRoot : MonoBehaviour
         this.Log("EnterLogin");
     }
 
-    public void AddTips(string tips)
+    public void ShowTips(string tips)
     {
         tipsWnd.AddTips(tips);
     }

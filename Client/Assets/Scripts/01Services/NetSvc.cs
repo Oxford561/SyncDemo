@@ -1,6 +1,7 @@
 using PENet;
 using PEUtils;
 using Protocol;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -12,15 +13,15 @@ using UnityEngine;
 public class NetSvc : MonoBehaviour
 {
     public static NetSvc Instance;
-    private KCPNet<ClientSession, NetMsg> client = new KCPNet<ClientSession, NetMsg>();
-    private Queue<NetMsg> msgPackQue = new Queue<NetMsg>();
+    private KCPNet<ClientSession, NetMsg> client = null;
+    private Queue<NetMsg> msgPackQue = null;
     public static readonly string pkgque_lock = "pkgque_lock";
     private Task<bool> checkTask = null;
     public void InitSvc()
     {
         Instance = this;
-
-        msgPackQue.Clear();
+        client = new KCPNet<ClientSession, NetMsg>();
+        msgPackQue = new Queue<NetMsg>();
 
         // 给 KCP 网络库设置日志配置
         KCPTool.LogFunc = this.Log;
@@ -52,8 +53,8 @@ public class NetSvc : MonoBehaviour
         {
             if(checkTask.Result)
             {
-                GameRoot.Instance.AddTips("连接服务器成功");
-                this.Log("Connect Server Success");
+                GameRoot.Instance.ShowTips("连接服务器成功");
+                this.ColorLog(LogColor.Green,"Connect Server Success");
                 checkTask = null;
                 // todo 发送 ping
 
@@ -64,7 +65,7 @@ public class NetSvc : MonoBehaviour
                 if(counter > 4)
                 {
                     this.Error(string.Format("Connect Failed {0} times,check your Network Connection. ",counter));
-                    GameRoot.Instance.AddTips("无法连接服务器，请检查网络状况");
+                    GameRoot.Instance.ShowTips("无法连接服务器，请检查网络状况");
                     checkTask=null;
                 }
                 else
@@ -87,6 +88,21 @@ public class NetSvc : MonoBehaviour
             }
         }
 
+    }
+
+    public void SendMsg(NetMsg msg,Action<bool> cb = null)
+    {
+        if(client.clientSession != null && client.clientSession.IsConnected())
+        {
+            client.clientSession.SendMsg(msg);
+            cb?.Invoke(true);
+        }
+        else
+        {
+            GameRoot.Instance.ShowTips("服务器未连接");
+            this.Error("服务器未连接");
+            cb?.Invoke(false);
+        }
     }
 
     // 消息分发

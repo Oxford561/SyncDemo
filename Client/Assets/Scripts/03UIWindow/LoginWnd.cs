@@ -1,3 +1,4 @@
+using Protocol;
 using UnityEngine.UI;
 
 public class LoginWnd : WindowRoot
@@ -19,13 +20,29 @@ public class LoginWnd : WindowRoot
         audioSvc.PlayUIAudio("loginBtnClick");
         if (iptAcct.text.Length >= 3 && iptPass.text.Length >= 3)
         {
-            // TODO 发送网络消息 请求登录服务器
+            //发送网络消息 请求登录服务器
+            NetMsg msg = new NetMsg
+            {
+                cmd = CMD.ReqLogin,
+                reqLogin = new ReqLogin
+                {
+                    acct = iptAcct.text,
+                    pass = iptPass.text,
+                }
+            };
+            netSvc.SendMsg(msg,(bool result) =>
+            {
+                if(result == false)
+                {
+                    netSvc.InitSvc();
+                }
+            });
 
         }
         else
         {
             // "账号/密码不符合规范"
-            root.AddTips("账号或密码为空！");
+            root.ShowTips("账号或密码为空！");
         }
     }
 

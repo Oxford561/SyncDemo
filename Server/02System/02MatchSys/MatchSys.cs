@@ -28,6 +28,39 @@ namespace Server
         public override void Update()
         {
             base.Update();
+
+            while(que1V1.Count >= 2)
+            {
+                ServerSession[] sessionArr = new ServerSession[2];
+                for(int i = 0; i < 2; i++)
+                {
+                    sessionArr[i] = que1V1.Dequeue();
+                }
+
+                RoomSys.Instance.AddPVPRoom(sessionArr, PVPEnum._1v1);
+            }
+
+            while (que2V2.Count >= 4)
+            {
+                ServerSession[] sessionArr = new ServerSession[4];
+                for (int i = 0; i < 4; i++)
+                {
+                    sessionArr[i] = que2V2.Dequeue();
+                }
+
+                RoomSys.Instance.AddPVPRoom(sessionArr, PVPEnum._2v2);
+            }
+
+            while (que5V5.Count >= 10)
+            {
+                ServerSession[] sessionArr = new ServerSession[10];
+                for (int i = 0; i < 10; i++)
+                {
+                    sessionArr[i] = que5V5.Dequeue();
+                }
+
+                RoomSys.Instance.AddPVPRoom(sessionArr, PVPEnum._5v5);
+            }
         }
 
         public void ReqMatch(MsgPack pack)

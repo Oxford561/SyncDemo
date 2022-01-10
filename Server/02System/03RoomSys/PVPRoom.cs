@@ -1,4 +1,5 @@
-﻿using Protocol;
+﻿using PENet;
+using Protocol;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -44,6 +45,21 @@ namespace Server
                 fsm[targetState].Enter();
                 currentRoomStateEnum = targetState;
             }
+        }
+
+        public void BroadcastMsg(NetMsg msg)
+        {
+            // 性能优化，数据相同，只序列化一次
+            byte[] bytes = KCPTool.Serialize(msg);
+            if(bytes != null)
+            {
+                for (int i = 0; i < sessionArr.Length; i++)
+                {
+                    //sessionArr[i].SendMsg(msg);
+                    sessionArr[i].SendMsg(bytes);
+                }
+            }
+            
         }
     }
 }

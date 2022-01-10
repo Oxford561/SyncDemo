@@ -11,6 +11,7 @@ namespace Server
     public class RoomStateConfirm : RoomStateBase
     {
         private ConfirmData[] confirmArr = null;
+        private int checkTaskID = -1;
 
         public RoomStateConfirm(PVPRoom room):base(room)
         {
@@ -42,6 +43,13 @@ namespace Server
             };
 
             room.BroadcastMsg(msg);
+
+            checkTaskID = TimerSvc.Instance.AddTask(ServerConfig.ConfirmCountDown * 1000, ReachTimeLimit);
+        }
+
+        void ReachTimeLimit(int tid)
+        {
+
         }
 
         public override void Exit()

@@ -98,5 +98,12 @@ public class GameRoot : MonoBehaviour
         get { return userData; }
     }
 
+    private uint roomID;
+    public uint RoomID
+    {
+        get { return roomID; }
+        set { roomID = value; }
+    }
+
     #endregion
 }

@@ -129,6 +129,9 @@ public class NetSvc : MonoBehaviour
             case CMD.RspMatch:
                 LobbySys.Instance.RspMatch(msg);
                 break;
+            case CMD.NtfConfirm:
+                LobbySys.Instance.NtfConfirm(msg);
+                break;
             default:
                 break;
         }

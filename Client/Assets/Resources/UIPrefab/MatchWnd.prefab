@@ -1061,6 +1061,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5509449856889242809}
+  - component: {fileID: 2054180812822528778}
   m_Layer: 5
   m_Name: MatchWnd
   m_TagString: Untagged
@@ -1093,6 +1094,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2054180812822528778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5722974442140795421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0f4e5c89fd92d3499d60086de4d8e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtTime: {fileID: 3357709523548407083}
+  txtConfirm: {fileID: 7557946296644131827}
+  leftPlayerRoot: {fileID: 6462548898091637841}
+  rightPlayerRoot: {fileID: 8678203453274956490}
+  btnConfirm: {fileID: 5691649597964553709}
 --- !u!1 &5723185283361336471
 GameObject:
   m_ObjectHideFlags: 0

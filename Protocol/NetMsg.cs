@@ -8,7 +8,7 @@ namespace Protocol
     /// 网络通讯协议
     /// </summary>
     [Serializable]
-    public class NetMsg:KCPMsg
+    public class NetMsg : KCPMsg
     {
         public CMD cmd;
         public ErrorCode error;
@@ -16,6 +16,8 @@ namespace Protocol
         public RspLogin rspLogin;
         public ReqMatch reqMatch;
         public RspMatch rspMatch;
+        public NtfConfirm ntfConfirm;
+        public SndConfirm sndConfirm;
     }
 
     #region 登录相关
@@ -59,7 +61,7 @@ namespace Protocol
     [Serializable]
     public enum PVPEnum
     {
-        None=0,
+        None = 0,
         _1v1 = 1,
         _2v2 = 2,
         _5v5 = 3,
@@ -75,6 +77,27 @@ namespace Protocol
     public class RspMatch
     {
         public int predictTime;
+    }
+
+    [Serializable]
+    public class NtfConfirm
+    {
+        public uint roomID;
+        public bool dissmiss;//解散
+        public ConfirmData[] confirmArr;
+    }
+
+    [Serializable]
+    public class ConfirmData
+    {
+        public int iconIndex;
+        public bool confirmDone;
+    }
+
+    [Serializable]
+    public class SndConfirm
+    {
+        public uint roomID;
     }
 
     #endregion
@@ -93,11 +116,15 @@ namespace Protocol
     {
         None = 0,
         // 登录
-        ReqLogin= 1,
-        RspLogin= 2,
+        ReqLogin = 1,
+        RspLogin = 2,
 
         // 匹配
         ReqMatch = 3,
         RspMatch = 4,
+
+        //确认
+        NtfConfirm = 5,
+        SndConfirm = 6,
     }
 }

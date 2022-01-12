@@ -82,6 +82,9 @@ namespace Server
                 case CMD.ReqMatch:
                     MatchSys.Instance.ReqMatch(pack);
                     break;
+                case CMD.SndConfirm:
+                    RoomSys.Instance.SndConfirm(pack);
+                    break;
                 case CMD.None:
                     break;
             }

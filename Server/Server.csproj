@@ -16,6 +16,9 @@
     <Reference Include="KCPNet">
       <HintPath>Plugins\KCPNet.dll</HintPath>
     </Reference>
+    <Reference Include="PETimer">
+      <HintPath>C:\Users\20686\Downloads\Compressed\_3Note\_3Note\Libs\PETimer.dll</HintPath>
+    </Reference>
     <Reference Include="PEUtils">
       <HintPath>C:\Users\20686\Downloads\Compressed\_3Note\_3Note\Libs\PEUtils.dll</HintPath>
     </Reference>

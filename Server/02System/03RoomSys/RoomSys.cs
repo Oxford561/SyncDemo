@@ -42,5 +42,18 @@ namespace Server
             roomID += 1;
             return roomID;
         }
+
+        public void SndConfirm(MsgPack pack)
+        {
+            SndConfirm req = pack.msg.sndConfirm;
+            if(pvpRoomDic.TryGetValue(req.roomID,out PVPRoom room))
+            {
+                room.SndConfirm(pack.session);
+            }
+            else
+            {
+                this.Warn("PVPRoom ID:" + req.roomID + " is Destroy");
+            }
+        }
     }
 }

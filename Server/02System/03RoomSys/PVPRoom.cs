@@ -59,7 +59,30 @@ namespace Server
                     sessionArr[i].SendMsg(bytes);
                 }
             }
-            
+        }
+
+        int GetPosIndex(ServerSession session)
+        {
+            int posIndex = 0;
+            for (int i = 0; i < sessionArr.Length; i++)
+            {
+                if(sessionArr[i]==session)
+                {
+                    posIndex = i;
+                }
+            }
+            return posIndex;
+        }
+
+        public void SndConfirm(ServerSession session)
+        {
+            if(currentRoomStateEnum == RoomStateEnum.Confirm)
+            {
+                if(fsm[currentRoomStateEnum] is RoomStateConfirm state)
+                {
+                    state.UpdateConfirmState(GetPosIndex(session));
+                }
+            }
         }
     }
 }

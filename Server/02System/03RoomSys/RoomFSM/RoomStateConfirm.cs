@@ -12,8 +12,9 @@ namespace Server
     {
         private ConfirmData[] confirmArr = null;
         private int checkTaskID = -1;
+        private bool isAllConfirmed = false;
 
-        public RoomStateConfirm(PVPRoom room):base(room)
+        public RoomStateConfirm(PVPRoom room) : base(room)
         {
 
         }
@@ -49,7 +50,69 @@ namespace Server
 
         void ReachTimeLimit(int tid)
         {
+            if(isAllConfirmed)
+            {
+                return;
+            }
 
+            this.ColorLog(PEUtils.LogColor.Yellow,"RoomID:{0} 确认超时，解散房间，重新匹配",room.roomID);
+            NetMsg msg = new NetMsg
+            {
+                cmd = CMD.NtfConfirm,
+                ntfConfirm = new NtfConfirm
+                {
+                    dissmiss = true
+                }
+            };
+
+            room.BroadcastMsg(msg);
+            room.ChangeRoomState(RoomStateEnum.End);
+        }
+
+        void CheckConfirmState()
+        {
+            for (int i = 0; i < confirmArr.Length; i++)
+            {
+                if (confirmArr[i].confirmDone == false)
+                {
+                    return;
+                }
+            }
+
+            isAllConfirmed = true;
+        }
+
+        public void UpdateConfirmState(int posIndex)
+        {
+            confirmArr[posIndex].confirmDone = true;
+            CheckConfirmState();
+            if (isAllConfirmed)
+            {
+                if (TimerSvc.Instance.DeleteTask(checkTaskID))
+                {
+                    this.ColorLog(PEUtils.LogColor.Green, "RoomID:{0} 所有玩家确认完成，进入英雄选择。", room.roomID);
+                }
+                else
+                {
+                    this.Warn("Remove checkTaskID Failed");
+                }
+
+                room.ChangeRoomState(RoomStateEnum.Select);
+            }
+            else
+            {
+                NetMsg msg = new NetMsg
+                {
+                    cmd = CMD.NtfConfirm,
+                    ntfConfirm = new NtfConfirm
+                    {
+                        roomID = room.roomID,
+                        dissmiss = false,
+                        confirmArr = confirmArr
+                    }
+                };
+                room.BroadcastMsg(msg);
+            }
         }
 
         public override void Exit()

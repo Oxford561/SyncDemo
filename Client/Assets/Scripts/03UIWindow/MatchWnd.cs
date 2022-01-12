@@ -79,6 +79,22 @@ public class MatchWnd : WindowRoot
         txtConfirm.text = confirmCount + "/" + confirmArr.Length+"就绪";
     }
 
+    public void ClickConfirmBtn()
+    {
+        audioSvc.PlayUIAudio("matchSureClick");
+        NetMsg msg = new NetMsg
+        {
+            cmd = CMD.SndConfirm,
+            sndConfirm = new SndConfirm
+            {
+                roomID = root.RoomID
+            }
+        };
+
+        netSvc.SendMsg(msg);
+        btnConfirm.interactable = false;
+    }
+
     private float deltaCount;
     void Update()
     {

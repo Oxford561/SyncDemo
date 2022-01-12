@@ -1315,6 +1315,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5691649597964553709, guid: 3338649629488f140bc31361deb1a25b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1882280698}
+    - target: {fileID: 5691649597964553709, guid: 3338649629488f140bc31361deb1a25b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClickConfirmBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691649597964553709, guid: 3338649629488f140bc31361deb1a25b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MatchWnd, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5722974442140795421, guid: 3338649629488f140bc31361deb1a25b, type: 3}
       propertyPath: m_Name
       value: MatchWnd

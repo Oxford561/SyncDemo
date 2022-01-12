@@ -73,4 +73,58 @@ public class WindowRoot : MonoBehaviour
     {
         ipt.gameObject.SetActive(state);
     }
+
+    protected Image GetImage(Transform trans,string path)
+    {
+        if(trans != null)
+        {
+            return trans.Find(path).GetComponent<Image>();
+        }
+        else
+        {
+            return transform.Find(path).GetComponent<Image>();
+        }
+    }
+
+    protected Image GetImage(Transform trans)
+    {
+        if (trans != null)
+        {
+            return trans.GetComponent<Image>();
+        }
+        else
+        {
+            return transform.GetComponent<Image>();
+        }
+    }
+
+    protected Text GetText(Transform trans, string path)
+    {
+        if (trans != null)
+        {
+            return trans.Find(path).GetComponent<Text>();
+        }
+        else
+        {
+            return transform.Find(path).GetComponent<Text>();
+        }
+    }
+
+    protected Transform GetTrans(Transform trans,string name)
+    {
+        if(trans != null)
+        {
+            return trans.Find(name);
+        }
+        else
+        {
+            return transform.Find(name);
+        }
+    }
+
+    protected void SetSprite(Image image,string path)
+    {
+        Sprite sp = ResSvc.Instance.LoadSprite(path, true);
+        image.sprite = sp;
+    }
 }

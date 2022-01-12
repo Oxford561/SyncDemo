@@ -28,4 +28,19 @@ public class ResSvc : MonoBehaviour
         }
         return au;
     }
+
+    private Dictionary<string, Sprite> spDic = new Dictionary<string, Sprite>();
+    public Sprite LoadSprite(string path,bool cache=false)
+    {
+        Sprite au = null;
+        if (!spDic.TryGetValue(path, out au))
+        {
+            au = Resources.Load<Sprite>(path);
+            if (cache)
+            {
+                spDic.Add(path, au);
+            }
+        }
+        return au;
+    }
 }

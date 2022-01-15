@@ -1,11 +1,12 @@
-using Protocol;
+锘縰sing Protocol;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 /// <summary>
-/// 英雄的选择界面
+/// 鑻遍泟鐨勯�夋嫨鐣岄潰
 /// </summary>
 public class SelectWnd : WindowRoot
 {
@@ -41,6 +42,16 @@ public class SelectWnd : WindowRoot
             RectTransform rect = go.GetComponent<RectTransform>();
             rect.SetParent(transScrollRoot);
             rect.localScale = Vector3.one;
+            UnitCfg unitCfg = ResSvc.Instance.GetUnitCfgByID(heroID);
+            SetSprite(GetImage(go.transform, "imgIcon"), "ResImages/SelectWnd/" + unitCfg.resName + "_head");
+            SetText(GetText(go.transform, "txtName"), unitCfg.unitName);
+
+            OnClick(go, ClickHeroItem, go, heroID);
         }
+    }
+
+    void ClickHeroItem(PointerEventData ped,object[] args)
+    {
+
     }
 }

@@ -1,13 +1,13 @@
-using System.Collections;
+锘縰sing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 单元配置
+/// 鍗曞厓閰嶇疆
 /// </summary>
 public class UnitCfg 
 {
     public int unitID;
-    public string unitName;//单位角色名词
-    public string resName;//资源名词
+    public string unitName;//鍗曚綅瑙掕壊鍚嶈瘝
+    public string resName;//璧勬簮鍚嶈瘝
 }

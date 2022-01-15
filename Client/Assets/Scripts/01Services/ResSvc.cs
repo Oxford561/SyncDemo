@@ -43,4 +43,26 @@ public class ResSvc : MonoBehaviour
         }
         return au;
     }
+
+    public UnitCfg GetUnitCfgByID(int unitID)
+    {
+        switch(unitID)
+        {
+            case 101:
+                return new UnitCfg
+                {
+                    unitID = 101,
+                    unitName = "亚瑟",
+                    resName ="arthur",
+                };
+            case 102:
+                return new UnitCfg
+                {
+                    unitID = 102,
+                    unitName = "后羿",
+                    resName = "houyi",
+                };
+        }
+        return null;
+    }
 }

@@ -50,12 +50,12 @@ namespace Server
 
         void ReachTimeLimit(int tid)
         {
-            if(isAllConfirmed)
+            if (isAllConfirmed)
             {
                 return;
             }
 
-            this.ColorLog(PEUtils.LogColor.Yellow,"RoomID:{0} 确认超时，解散房间，重新匹配",room.roomID);
+            this.ColorLog(PEUtils.LogColor.Yellow, "RoomID:{0} 确认超时，解散房间，重新匹配", room.roomID);
             NetMsg msg = new NetMsg
             {
                 cmd = CMD.NtfConfirm,
@@ -117,6 +117,9 @@ namespace Server
 
         public override void Exit()
         {
+            confirmArr = null;
+            checkTaskID = -1;
+            isAllConfirmed = false;
         }
 
         public override void Update()

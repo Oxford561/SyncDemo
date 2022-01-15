@@ -38,3 +38,4 @@ D:\GitProjects\SyncDemo\Server\bin\Debug\netcoreapp3.1\KCPNet.dll
 D:\GitProjects\SyncDemo\Server\bin\Debug\netcoreapp3.1\Protocol.dll
 D:\GitProjects\SyncDemo\Server\bin\Debug\netcoreapp3.1\Protocol.pdb
 D:\GitProjects\SyncDemo\Server\bin\Debug\netcoreapp3.1\PETimer.dll
+E:\GitProjects\SyncDemo\Server\bin\Debug\netcoreapp3.1\PETimer.dll

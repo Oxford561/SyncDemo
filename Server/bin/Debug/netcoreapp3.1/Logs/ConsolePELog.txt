@@ -1,20 +1,21 @@
-[L]# 09:27:25--814  ThreadID:1 >> CacheSvc Init Done
-[L]# 09:27:25--853  ThreadID:1 >> TimerSvc Init Done
-[L]# 09:27:25--908  ThreadID:1 >> Server Start...
-[L]# 09:27:25--926  ThreadID:1 >> NetSvc Init Done
-[L]# 09:27:25--929  ThreadID:1 >> LoginSys Init Done
-[L]# 09:27:25--931  ThreadID:1 >> MatchSys Init Done
-[L]# 09:27:25--932  ThreadID:1 >> RoomSys Init Done
-[L]# 09:27:25--932  ThreadID:1 >> ServerRoot Init Done
-[L]# 09:27:37--292  ThreadID:7 >> Client Online sid=1
-[L]# 09:27:37--326  ThreadID:4 >> RcvPack CMD:ReqLogin
-[L]# 09:27:38--823  ThreadID:6 >> Client Online sid=2
-[L]# 09:27:38--824  ThreadID:4 >> RcvPack CMD:ReqLogin
-[L]# 09:27:40--948  ThreadID:5 >> RcvPack CMD:ReqMatch
-[L]# 09:27:42--856  ThreadID:9 >> RcvPack CMD:ReqMatch
-[L]# 09:27:44--966  ThreadID:5 >> RcvPack CMD:SndConfirm
-[L]# 09:27:57--886  ThreadID:1 >> RoomID:1 确认超时，解散房间，重新匹配
-[L]# 09:28:06--977  ThreadID:5 >> RcvPack CMD:ReqMatch
-[L]# 09:28:08--551  ThreadID:8 >> RcvPack CMD:ReqMatch
-[L]# 09:28:12--241  ThreadID:8 >> RcvPack CMD:SndConfirm
-[L]# 09:28:23--577  ThreadID:1 >> RoomID:2 确认超时，解散房间，重新匹配
+[L]# 04:15:54--052  ThreadID:1 >> CacheSvc Init Done
+[L]# 04:15:54--223  ThreadID:1 >> TimerSvc Init Done
+[L]# 04:15:54--315  ThreadID:1 >> Server Start...
+[L]# 04:15:54--336  ThreadID:1 >> NetSvc Init Done
+[L]# 04:15:54--339  ThreadID:1 >> LoginSys Init Done
+[L]# 04:15:54--339  ThreadID:1 >> MatchSys Init Done
+[L]# 04:15:54--340  ThreadID:1 >> RoomSys Init Done
+[L]# 04:15:54--341  ThreadID:1 >> ServerRoot Init Done
+[L]# 04:16:27--530  ThreadID:7 >> Client Online sid=1
+[L]# 04:16:27--576  ThreadID:8 >> RcvPack CMD:ReqLogin
+[L]# 04:16:36--232  ThreadID:6 >> Client Online sid=2
+[L]# 04:16:36--233  ThreadID:10 >> RcvPack CMD:ReqLogin
+[L]# 04:16:38--150  ThreadID:12 >> RcvPack CMD:ReqMatch
+[L]# 04:16:39--383  ThreadID:12 >> RcvPack CMD:ReqMatch
+[L]# 04:16:41--130  ThreadID:12 >> RcvPack CMD:SndConfirm
+[L]# 04:16:54--416  ThreadID:1 >> RoomID:1 确认超时，解散房间，重新匹配
+[L]# 04:17:01--981  ThreadID:12 >> RcvPack CMD:ReqMatch
+[L]# 04:17:04--539  ThreadID:12 >> RcvPack CMD:ReqMatch
+[L]# 04:17:05--716  ThreadID:11 >> RcvPack CMD:SndConfirm
+[L]# 04:17:06--894  ThreadID:9 >> RcvPack CMD:SndConfirm
+[L]# 04:17:06--909  ThreadID:1 >> RoomID:2 所有玩家确认完成，进入英雄选择。

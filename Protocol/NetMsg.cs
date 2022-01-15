@@ -18,6 +18,8 @@ namespace Protocol
         public RspMatch rspMatch;
         public NtfConfirm ntfConfirm;
         public SndConfirm sndConfirm;
+        //public NtfSelect ntfSelect;
+        public SndSelect sndSelect;
     }
 
     #region 登录相关
@@ -102,6 +104,29 @@ namespace Protocol
 
     #endregion
 
+    #region 选择加载
+
+    //[Serializable]
+    //public class NtfSelect
+    //{
+
+    //}
+
+    [Serializable]
+    public class SelectData
+    {
+        public int selectID;
+        public bool selectDone;
+    }
+
+    public class SndSelect
+    {
+        public uint roomID;
+        public int heroID;
+    }
+
+    #endregion
+
     // 错误码
     [Serializable]
     public enum ErrorCode
@@ -126,5 +151,9 @@ namespace Protocol
         //确认
         NtfConfirm = 5,
         SndConfirm = 6,
+
+        // 选择
+        NtfSelect = 7,
+        SndSelect = 8,
     }
 }

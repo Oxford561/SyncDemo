@@ -10,6 +10,8 @@ namespace Protocol
     {
         //匹配倒计时 15s
         public const int ConfirmCountDown = 15;
+        // 选择英雄倒计时 15s
+        public const int SelectCountDown = 15;
 
         public const string LocalDevInnerIP = "127.0.0.1";
         public const int UdpPort = 17666;

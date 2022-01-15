@@ -4,7 +4,6 @@ E:\GitProjects\SyncDemo\Protocol\obj\Debug\Protocol.csproj.CoreCompileInputs.cac
 E:\GitProjects\SyncDemo\Protocol\obj\Debug\Protocol.csproj.CopyComplete
 E:\GitProjects\SyncDemo\Protocol\obj\Debug\Protocol.dll
 E:\GitProjects\SyncDemo\Protocol\obj\Debug\Protocol.pdb
-E:\GitProjects\SyncDemo\Protocol\obj\Debug\Protocol.csproj.AssemblyReference.cache
 D:\GitProjects\SyncDemo\Client\Assets\Scripts\00Common\Libs\KCPNet\Protocol.dll
 D:\GitProjects\SyncDemo\Client\Assets\Scripts\00Common\Libs\KCPNet\Protocol.pdb
 D:\GitProjects\SyncDemo\Protocol\obj\Debug\Protocol.csprojAssemblyReference.cache

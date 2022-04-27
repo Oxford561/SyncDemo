@@ -119,6 +119,7 @@ namespace Protocol
         public bool selectDone;
     }
 
+    [Serializable]
     public class SndSelect
     {
         public uint roomID;

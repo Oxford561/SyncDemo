@@ -14,6 +14,8 @@ namespace Server
         public uint roomID;
         public PVPEnum pvpEnum = PVPEnum.None;
         public ServerSession[] sessionArr;
+        private SelectData[] selectArr = null;
+        public SelectData[] SelectArr { set { selectArr = value; } get { return selectArr; } }
 
         private Dictionary<RoomStateEnum, RoomStateBase> fsm = new Dictionary<RoomStateEnum, RoomStateBase>();
         private RoomStateEnum currentRoomStateEnum = RoomStateEnum.None;
@@ -81,6 +83,17 @@ namespace Server
                 if(fsm[currentRoomStateEnum] is RoomStateConfirm state)
                 {
                     state.UpdateConfirmState(GetPosIndex(session));
+                }
+            }
+        }
+
+        public void SndSelect(ServerSession session,int heroID)
+        {
+            if (currentRoomStateEnum == RoomStateEnum.Select)
+            {
+                if (fsm[currentRoomStateEnum] is RoomStateSelect state)
+                {
+                    state.UpdateHeroSelect(GetPosIndex(session),heroID);
                 }
             }
         }

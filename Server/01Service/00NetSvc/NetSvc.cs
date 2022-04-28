@@ -85,6 +85,9 @@ namespace Server
                 case CMD.SndConfirm:
                     RoomSys.Instance.SndConfirm(pack);
                     break;
+                case CMD.SndSelect:
+                    RoomSys.Instance.SndSelect(pack);
+                    break;
                 case CMD.None:
                     break;
             }

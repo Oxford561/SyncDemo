@@ -132,6 +132,9 @@ public class NetSvc : MonoBehaviour
             case CMD.NtfConfirm:
                 LobbySys.Instance.NtfConfirm(msg);
                 break;
+            case CMD.NtfSelect:
+                LobbySys.Instance.NtfSelect(msg);
+                break;
             default:
                 break;
         }

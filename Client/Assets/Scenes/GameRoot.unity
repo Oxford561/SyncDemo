@@ -192,6 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lobbyWnd: {fileID: 8311686609652959894}
   matchWnd: {fileID: 1882280698}
+  selectWnd: {fileID: 1980159960}
 --- !u!114 &307847887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -978,6 +979,17 @@ Transform:
   m_Father: {fileID: 307847884}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1980159960 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8835884988111504078, guid: 91daec01c32f76c4f98172020d3b580f, type: 3}
+  m_PrefabInstance: {fileID: 554271568164783508}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65f0295a28c0810498c35897bb7197c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2009450298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,6 +1127,18 @@ PrefabInstance:
     - target: {fileID: 890296089769682367, guid: 91daec01c32f76c4f98172020d3b580f, type: 3}
       propertyPath: m_Name
       value: SelectWnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 993655433878645327, guid: 91daec01c32f76c4f98172020d3b580f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1980159960}
+    - target: {fileID: 993655433878645327, guid: 91daec01c32f76c4f98172020d3b580f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClickSureBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 993655433878645327, guid: 91daec01c32f76c4f98172020d3b580f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SelectWnd, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1099896496546964251, guid: 91daec01c32f76c4f98172020d3b580f, type: 3}
       propertyPath: m_Pivot.x

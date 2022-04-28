@@ -8,6 +8,7 @@ public class LobbySys : SysRoot
     public static LobbySys Instance;
     public LobbyWnd lobbyWnd;
     public MatchWnd matchWnd;
+    public SelectWnd selectWnd;
     public override void InitSys()
     {
         base.InitSys();
@@ -44,5 +45,11 @@ public class LobbySys : SysRoot
             }
             matchWnd.RefreshUI(ntf.confirmArr);
         }
+    }
+
+    public void NtfSelect(NetMsg msg)
+    {
+        matchWnd.SetWndState(false);
+        selectWnd.SetWndState();
     }
 }

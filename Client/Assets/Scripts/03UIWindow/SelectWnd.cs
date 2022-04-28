@@ -20,6 +20,7 @@ public class SelectWnd : WindowRoot
     private int timeCount;
     private List<HeroSelectData> heroSelectLst = null;
     private bool isSelected = false;
+    private int selectHeroID;
 
     protected override void InitWnd()
     {
@@ -47,11 +48,92 @@ public class SelectWnd : WindowRoot
             SetText(GetText(go.transform, "txtName"), unitCfg.unitName);
 
             OnClick(go, ClickHeroItem, go, heroID);
+
+            // 默认选中第一个英雄
+            if(i == 0)
+            {
+                ClickHeroItem(null, new object[] { go, heroID });
+            }
         }
     }
 
     void ClickHeroItem(PointerEventData ped,object[] args)
     {
+        audioSvc.PlayUIAudio("SelectHeroClick");
 
+        if(isSelected)
+        {
+            root.ShowTips("已经选定英雄");
+            return;
+        }
+
+        GameObject go = args[0] as GameObject;
+
+        for (int i = 0;i< transScrollRoot.childCount;i++)
+        {
+            Transform item = transScrollRoot.GetChild(i);
+            Image selectGlow = GetImage(item, "state");
+            if(item.gameObject.Equals(go))
+            {
+                SetSprite(selectGlow, "ResImages/SelectWnd/selectGlow");
+            }
+            else
+            {
+                SetSprite(selectGlow, "ResImages/MatchWnd/frame_normal");
+            }
+        }
+        selectHeroID = (int)args[1];
+
+        UnitCfg cfg = resSvc.GetUnitCfgByID(selectHeroID);
+        SetSprite(imgHeroShow, "ResImages/SelectWnd/" + cfg.resName + "_show");
+
+        for(int i = 0; i< transSkillIconRoot.childCount; i++)
+        {
+            Image icon = GetImage(transSkillIconRoot.GetChild(i));
+            SetSprite(icon, "ResImages/PlayWnd/" + cfg.resName + "_sk" + i);
+        }
+    }
+
+    // 选择英雄倒计时
+    private float deltaCount = 0;
+    private void Update()
+    {
+        float delta = Time.deltaTime;
+        deltaCount += delta;
+        if(deltaCount >= 1)
+        {
+            deltaCount -= 1;
+            timeCount -= 1;
+            if(timeCount < 0)
+            {
+                timeCount = 0;
+                ClickSureBtn();
+            }
+            txtCountTime.text = timeCount.ToString();
+        }
+    }
+
+    public void ClickSureBtn()
+    {
+        audioSvc.PlayUIAudio("com_click2'");
+
+        if (isSelected)
+        {
+            return;
+        }
+
+        NetMsg msg = new NetMsg()
+        {
+            cmd = CMD.SndSelect,
+            sndSelect = new SndSelect
+            {
+                roomID = root.RoomID,
+                heroID = selectHeroID
+            }
+        };
+
+        netSvc.SendMsg(msg);
+        btnSure.interactable = false;
+        isSelected = true;
     }
 }

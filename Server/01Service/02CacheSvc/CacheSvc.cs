@@ -36,5 +36,17 @@ namespace Server
             onLineAcctDic.Add(acct, session);
             onLineSessionDic.Add(session, playerData);
         }
+
+        public UserData GetUserDataBySession(ServerSession session)
+        {
+            if (onLineSessionDic.TryGetValue(session,out UserData playerData))
+            {
+                return playerData;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

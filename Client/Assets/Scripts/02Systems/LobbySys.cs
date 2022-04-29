@@ -52,4 +52,13 @@ public class LobbySys : SysRoot
         matchWnd.SetWndState(false);
         selectWnd.SetWndState();
     }
+
+    public void NtfLoadRes(NetMsg msg)
+    {
+        root.MapID = msg.ntfLoadRes.mapID;
+        root.HeroList = msg.ntfLoadRes.heroList;
+        root.SelfIndex = msg.ntfLoadRes.posIndex;
+        selectWnd.SetWndState(false);
+        BattleSys.Instance.EnterBattle();
+    }
 }

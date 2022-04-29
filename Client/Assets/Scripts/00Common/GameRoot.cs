@@ -105,5 +105,13 @@ public class GameRoot : MonoBehaviour
         set { roomID = value; }
     }
 
+    private int mapID;
+    public int MapID { get { return mapID; } set { mapID = value; } }
+
+    private int selfIndex;
+    public int SelfIndex { get { return selfIndex; } set { selfIndex = value; } }
+
+    private List<BattleHeroData> heroList;
+    public List<BattleHeroData> HeroList { get { return heroList; } set { heroList = value; } }
     #endregion
 }

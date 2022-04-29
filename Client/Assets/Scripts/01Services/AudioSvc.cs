@@ -17,6 +17,14 @@ public class AudioSvc : MonoBehaviour
         this.Log("Init AudioSvc done");
     }
 
+    public void StopBGMusic()
+    {
+        if (bgAudio != null)
+        {
+            bgAudio.Stop();
+        }
+    }
+
     public void PlayBGMusic(string name, bool isLoop = true)
     {
         if(!TurnOnVoice)

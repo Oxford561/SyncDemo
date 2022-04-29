@@ -20,6 +20,7 @@ namespace Protocol
         public SndConfirm sndConfirm;
         //public NtfSelect ntfSelect;
         public SndSelect sndSelect;
+        public NtfLoadRes ntfLoadRes;
     }
 
     #region 登录相关
@@ -126,6 +127,23 @@ namespace Protocol
         public int heroID;
     }
 
+    [Serializable]
+    public class NtfLoadRes
+    {
+        public int mapID;
+        public List<BattleHeroData> heroList;
+        public int posIndex;
+    }
+
+    [Serializable]
+    public class BattleHeroData
+    {
+        public string userName;//玩家名称
+        public int heroID;
+        // 级别，皮肤，边框，称号
+
+    }
+
     #endregion
 
     // 错误码
@@ -156,5 +174,8 @@ namespace Protocol
         // 选择
         NtfSelect = 7,
         SndSelect = 8,
+
+        // 加载
+        NtfLoadRes = 9,
     }
 }

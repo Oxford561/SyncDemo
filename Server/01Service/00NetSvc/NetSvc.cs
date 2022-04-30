@@ -88,6 +88,12 @@ namespace Server
                 case CMD.SndSelect:
                     RoomSys.Instance.SndSelect(pack);
                     break;
+                case CMD.SndLoadPrg:
+                    RoomSys.Instance.SndLoadPrg(pack);
+                    break;
+                case CMD.ReqBattleStart:
+                    RoomSys.Instance.ReqBattleStart(pack);
+                    break;
                 case CMD.None:
                     break;
             }

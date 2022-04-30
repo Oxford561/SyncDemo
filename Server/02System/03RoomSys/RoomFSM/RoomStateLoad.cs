@@ -8,8 +8,11 @@ namespace Server
     /// <summary>
     /// 加载
     /// </summary>
-    public class RoomStateLoad:RoomStateBase
+    public class RoomStateLoad : RoomStateBase
     {
+        private int[] percentArr;
+        private bool[] loadArr;
+
         public RoomStateLoad(PVPRoom room) : base(room)
         {
 
@@ -18,6 +21,8 @@ namespace Server
         public override void Enter()
         {
             int len = room.sessionArr.Length;
+            percentArr = new int[len];
+            loadArr = new bool[len];
 
             NetMsg msg = new NetMsg
             {
@@ -40,15 +45,57 @@ namespace Server
                 msg.ntfLoadRes.heroList.Add(hero);
             }
 
-            for (int i = 0;i < len;i++)
+            for (int i = 0; i < len; i++)
             {
                 msg.ntfLoadRes.posIndex = i;
                 room.sessionArr[i].SendMsg(msg);
             }
         }
 
+        public void UpdateLoadState(int posIndex, int percent)
+        {
+            percentArr[posIndex] = percent;
+            NetMsg msg = new NetMsg
+            {
+                cmd = CMD.NtfLoadPrg,
+                ntfLoadPrg = new NtfLoadPrg
+                {
+                    percentLst = new List<int>()
+                }
+            };
+
+            for (int i = 0; i < percentArr.Length; i++)
+            {
+                msg.ntfLoadPrg.percentLst.Add(percentArr[i]);
+            }
+            room.BroadcastMsg(msg);
+        }
+
+        public void UpdateLoadDone(int posIndex)
+        {
+            loadArr[posIndex] = true;
+            for (int i = 0; i < loadArr.Length; i++)
+            {
+                if(loadArr[i] == false)
+                {
+                    return;
+                }
+            }
+
+            NetMsg msg = new NetMsg
+            {
+                cmd = CMD.RspBattleStart
+            };
+
+            room.BroadcastMsg(msg);
+            room.ChangeRoomState(RoomStateEnum.Fight);
+            this.ColorLog(PEUtils.LogColor.Green, "RoomID:{0},所有玩家进入战斗", room.roomID);
+        }
+
         public override void Exit()
         {
+            percentArr = null;
+            loadArr = null;
         }
 
         public override void Update()

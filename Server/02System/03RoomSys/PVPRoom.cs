@@ -97,5 +97,27 @@ namespace Server
                 }
             }
         }
+
+        public void SndLoadPrg(ServerSession session, int percent)
+        {
+            if (currentRoomStateEnum == RoomStateEnum.Load)
+            {
+                if (fsm[currentRoomStateEnum] is RoomStateLoad state)
+                {
+                    state.UpdateLoadState(GetPosIndex(session), percent);
+                }
+            }
+        }
+
+        public void ReqBattleStart(ServerSession session)
+        {
+            if (currentRoomStateEnum == RoomStateEnum.Load)
+            {
+                if (fsm[currentRoomStateEnum] is RoomStateLoad state)
+                {
+                    state.UpdateLoadDone(GetPosIndex(session));
+                }
+            }
+        }
     }
 }

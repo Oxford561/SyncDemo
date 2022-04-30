@@ -1,18 +1,28 @@
-[L]# 09:10:55--493  ThreadID:1 >> CacheSvc Init Done
-[L]# 09:10:55--527  ThreadID:1 >> TimerSvc Init Done
-[L]# 09:10:55--591  ThreadID:1 >> Server Start...
-[L]# 09:10:55--610  ThreadID:1 >> NetSvc Init Done
-[L]# 09:10:55--613  ThreadID:1 >> LoginSys Init Done
-[L]# 09:10:55--615  ThreadID:1 >> MatchSys Init Done
-[L]# 09:10:55--616  ThreadID:1 >> RoomSys Init Done
-[L]# 09:10:55--616  ThreadID:1 >> ServerRoot Init Done
-[L]# 09:11:07--626  ThreadID:6 >> Client Online sid=1
-[L]# 09:11:07--672  ThreadID:4 >> RcvPack CMD:ReqLogin
-[L]# 09:11:10--782  ThreadID:6 >> Client Online sid=2
-[L]# 09:11:10--783  ThreadID:4 >> RcvPack CMD:ReqLogin
-[L]# 09:11:12--298  ThreadID:9 >> RcvPack CMD:ReqMatch
-[L]# 09:11:13--118  ThreadID:8 >> RcvPack CMD:ReqMatch
-[L]# 09:11:14--486  ThreadID:10 >> RcvPack CMD:SndConfirm
-[L]# 09:11:15--456  ThreadID:9 >> RcvPack CMD:SndConfirm
-[L]# 09:11:15--470  ThreadID:1 >> RoomID:1 所有玩家确认完成，进入英雄选择。
-[L]# 09:11:25--565  ThreadID:5 >> RcvPack CMD:SndSelect
+[L]# 05:49:21--786  ThreadID:1 >> CacheSvc Init Done
+[L]# 05:49:21--825  ThreadID:1 >> TimerSvc Init Done
+[L]# 05:49:21--885  ThreadID:1 >> Server Start...
+[L]# 05:49:21--908  ThreadID:1 >> NetSvc Init Done
+[L]# 05:49:21--914  ThreadID:1 >> LoginSys Init Done
+[L]# 05:49:21--914  ThreadID:1 >> MatchSys Init Done
+[L]# 05:49:21--915  ThreadID:1 >> RoomSys Init Done
+[L]# 05:49:21--915  ThreadID:1 >> ServerRoot Init Done
+[L]# 05:49:31--116  ThreadID:7 >> Client Online sid=1
+[L]# 05:49:31--151  ThreadID:4 >> RcvPack CMD:ReqLogin
+[L]# 05:49:32--925  ThreadID:7 >> Client Online sid=2
+[L]# 05:49:32--926  ThreadID:4 >> RcvPack CMD:ReqLogin
+[L]# 05:49:34--390  ThreadID:4 >> RcvPack CMD:ReqMatch
+[L]# 05:49:35--830  ThreadID:8 >> RcvPack CMD:ReqMatch
+[L]# 05:49:36--904  ThreadID:5 >> RcvPack CMD:SndConfirm
+[L]# 05:49:37--970  ThreadID:5 >> RcvPack CMD:SndConfirm
+[L]# 05:49:37--987  ThreadID:1 >> RoomID:1 所有玩家确认完成，进入英雄选择。
+[L]# 05:49:40--411  ThreadID:5 >> RcvPack CMD:SndSelect
+[L]# 05:49:43--270  ThreadID:10 >> RcvPack CMD:SndSelect
+[L]# 05:49:43--284  ThreadID:1 >> RoomID:1所有玩家选择英雄完成，进入游戏加载
+[L]# 05:49:43--347  ThreadID:10 >> RcvPack CMD:SndLoadPrg
+[L]# 05:49:43--362  ThreadID:5 >> RcvPack CMD:SndLoadPrg
+[L]# 05:49:43--363  ThreadID:5 >> RcvPack CMD:SndLoadPrg
+[L]# 05:49:43--425  ThreadID:8 >> RcvPack CMD:SndLoadPrg
+[L]# 05:49:43--425  ThreadID:5 >> RcvPack CMD:SndLoadPrg
+[L]# 05:49:43--426  ThreadID:5 >> RcvPack CMD:ReqBattleStart
+[L]# 05:49:43--441  ThreadID:8 >> RcvPack CMD:ReqBattleStart
+[L]# 05:49:43--488  ThreadID:1 >> RoomID:1,所有玩家进入战斗

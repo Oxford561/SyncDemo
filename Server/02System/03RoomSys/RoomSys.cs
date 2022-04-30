@@ -68,5 +68,30 @@ namespace Server
                 this.Warn("PVPRoom ID:" + req.roomID + " is Destroy");
             }
         }
+
+        public void SndLoadPrg(MsgPack pack)
+        {
+            SndLoadPrg req = pack.msg.sndLoadPrg;
+            if (pvpRoomDic.TryGetValue(req.roomID, out PVPRoom room))
+            {
+                room.SndLoadPrg(pack.session,req.percent);
+            }
+            else
+            {
+                this.Warn("PVPRoom ID:" + req.roomID + " is Destroy");
+            }
+        }
+        public void ReqBattleStart(MsgPack pack)
+        {
+            ReqBattleStart req = pack.msg.reqBattleStart;
+            if (pvpRoomDic.TryGetValue(req.roomID, out PVPRoom room))
+            {
+                room.ReqBattleStart(pack.session);
+            }
+            else
+            {
+                this.Warn("PVPRoom ID:" + req.roomID + " is Destroy");
+            }
+        }
     }
 }

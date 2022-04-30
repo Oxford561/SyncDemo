@@ -21,6 +21,8 @@ namespace Protocol
         //public NtfSelect ntfSelect;
         public SndSelect sndSelect;
         public NtfLoadRes ntfLoadRes;
+        public SndLoadPrg sndLoadPrg;
+        public NtfLoadPrg ntfLoadPrg;
     }
 
     #region 登录相关
@@ -144,6 +146,19 @@ namespace Protocol
 
     }
 
+    [Serializable]
+    public class SndLoadPrg
+    {
+        public uint roomID;
+        public int percent;
+    }
+
+    [Serializable]
+    public class NtfLoadPrg
+    {
+        public List<int> percentLst;
+    }
+
     #endregion
 
     // 错误码
@@ -177,5 +192,7 @@ namespace Protocol
 
         // 加载
         NtfLoadRes = 9,
+        SndLoadPrg = 10,
+        NtfLoadPrg = 11,
     }
 }

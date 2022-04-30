@@ -141,6 +141,9 @@ public class NetSvc : MonoBehaviour
             case CMD.NtfLoadPrg:
                 BattleSys.Instance.NtfLoadPrg(msg);
                 break;
+            case CMD.RspBattleStart:
+                BattleSys.Instance.RspBattleStart(msg);
+                break;
             default:
                 break;
         }

@@ -7,6 +7,7 @@ public class BattleSys : SysRoot
 {
     public static BattleSys Instance;
     public LoadWnd loadWnd;
+    public PlayWnd playWnd;
     private int mapID;
     public override void InitSys()
     {
@@ -47,12 +48,32 @@ public class BattleSys : SysRoot
     void SceneLoadDone()
     {
         //初始化 UI
+        playWnd.SetWndState();
         // 加载角色
         //初始化战斗
+
+
+        NetMsg msg = new NetMsg
+        {
+            cmd = CMD.ReqBattleStart,
+            reqBattleStart = new ReqBattleStart
+            {
+                roomID = root.RoomID
+            }
+        };
+
+        netSvc.SendMsg(msg);
     }
 
     public void NtfLoadPrg(NetMsg msg)
     {
         loadWnd.RefreshPrgData(msg.ntfLoadPrg.percentLst);
+    }
+
+    public void RspBattleStart(NetMsg msg)
+    {
+        loadWnd.SetWndState(false);
+        audioSvc.PlayBGMusic(NameDefine.BattleBGMusic);
+
     }
 }

@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /**
 *资源服务
@@ -64,5 +66,27 @@ public class ResSvc : MonoBehaviour
                 };
         }
         return null;
+    }
+
+    private Action prgCB = null;
+    public void AsyncLoadScene(string sceneName,Action<float> loadRate,Action loaded)
+    {
+        AsyncOperation scenenAsync = SceneManager.LoadSceneAsync(sceneName);
+        prgCB = () =>
+        {
+            float progress = scenenAsync.progress;
+            loadRate?.Invoke(progress);
+            if (progress == 1)
+            {
+                loaded?.Invoke();
+                prgCB = null;
+                scenenAsync = null;
+            }
+        };
+    }
+
+    private void Update()
+    {
+        prgCB?.Invoke();
     }
 }

@@ -138,6 +138,9 @@ public class NetSvc : MonoBehaviour
             case CMD.NtfLoadRes:
                 LobbySys.Instance.NtfLoadRes(msg);
                 break;
+            case CMD.NtfLoadPrg:
+                BattleSys.Instance.NtfLoadPrg(msg);
+                break;
             default:
                 break;
         }

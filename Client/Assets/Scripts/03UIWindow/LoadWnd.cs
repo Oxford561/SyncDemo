@@ -10,9 +10,11 @@ public class LoadWnd : WindowRoot
     public Transform redTeamRoot;
 
     private List<BattleHeroData> heroLst;
+    private List<Text> txtPercentLst;
     protected override void InitWnd()
     {
         base.InitWnd();
+        txtPercentLst = new List<Text>();
         audioSvc.PlayUIAudio("load");
 
         heroLst = root.HeroList;
@@ -30,6 +32,7 @@ public class LoadWnd : WindowRoot
                 SetText(GetText(player, "bgName/txtPlayerName"), heroLst[i].userName);
                 Text txtPrg = GetText(player, "txtProgress");
                 SetText(txtPrg, "0%");
+                txtPercentLst.Add(txtPrg);
             }
             else
             {
@@ -50,11 +53,20 @@ public class LoadWnd : WindowRoot
                 SetText(GetText(player, "bgName/txtPlayerName"), heroLst[i+count].userName);
                 Text txtPrg = GetText(player, "txtProgress");
                 SetText(txtPrg, "0%");
+                txtPercentLst.Add(txtPrg);
             }
             else
             {
                 SetActive(player, false);
             }
+        }
+    }
+
+    public void RefreshPrgData(List<int> percentLst)
+    {
+        for (int i = 0; i < percentLst.Count; i++)
+        {
+            txtPercentLst[i].text = percentLst[i] + "%";
         }
     }
 }

@@ -10,4 +10,3 @@ D:\GitProjects\SyncDemo\Protocol\obj\Debug\Protocol.csproj.CoreCompileInputs.cac
 D:\GitProjects\SyncDemo\Protocol\obj\Debug\Protocol.csproj.CopyComplete
 D:\GitProjects\SyncDemo\Protocol\obj\Debug\Protocol.dll
 D:\GitProjects\SyncDemo\Protocol\obj\Debug\Protocol.pdb
-D:\GitProjects\SyncDemo\Protocol\obj\Debug\Protocol.csprojAssemblyReference.cache

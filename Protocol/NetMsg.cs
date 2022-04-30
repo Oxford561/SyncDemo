@@ -23,6 +23,8 @@ namespace Protocol
         public NtfLoadRes ntfLoadRes;
         public SndLoadPrg sndLoadPrg;
         public NtfLoadPrg ntfLoadPrg;
+        public ReqBattleStart reqBattleStart;
+        public RspBattleStart rspBattleStart;
     }
 
     #region 登录相关
@@ -161,6 +163,23 @@ namespace Protocol
 
     #endregion
 
+
+    #region 核心战斗
+
+    [Serializable]
+    public class ReqBattleStart
+    {
+        public uint roomID;
+    }
+
+    [Serializable]
+    public class RspBattleStart
+    {
+
+    }
+
+    #endregion
+
     // 错误码
     [Serializable]
     public enum ErrorCode
@@ -194,5 +213,9 @@ namespace Protocol
         NtfLoadRes = 9,
         SndLoadPrg = 10,
         NtfLoadPrg = 11,
+
+        // 战斗
+        ReqBattleStart = 12,
+        RspBattleStart = 13,
     }
 }
